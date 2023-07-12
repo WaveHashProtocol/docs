@@ -39,11 +39,9 @@ wavehashd tx gov submit-proposal param-change <proposalFile.json> --from <keyNam
 
 For example:&#x20;
 
-{% code fullWidth="false" %}
-```sh
+```
 wavehashd tx gov submit-proposal param-change proposalPermission.json --from validator --chain-id testnet-1 -b block
 ```
-{% endcode %}
 
 **3. Wait for the deposit time to over OR submit a deposit using this command like this:**
 
@@ -114,7 +112,6 @@ See \[params.go]\(https://github.com/CosmWasm/wasmd/blob/master/x/wasm/types/par
 
 **### Init Params Via Genesis**
 
-{% code overflow="wrap" %}
 ```json
 "wasm":{
    "params":{
@@ -125,18 +122,14 @@ See \[params.go]\(https://github.com/CosmWasm/wasmd/blob/master/x/wasm/types/par
    }
 },
 ```
-{% endcode %}
 
 The values can be updated via gov proposal implemented in the \`params\` module.
 
 **Example to submit a parameter change gov proposal:**
 
-{% code fullWidth="false" %}
-```sh
-wasmd tx gov submit-proposal param-change <proposal-json-file> --from validator 
---chain-id=testing -b block
 ```
-{% endcode %}
+wasmd tx gov submit-proposal param-change <proposal-json-file> --from validator --chain-id=testing -b block
+```
 
 **#### Content examples**
 
