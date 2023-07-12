@@ -40,7 +40,7 @@ and save it as a json file.
 
 
 **2**. **Submit a this proposal using command like this:**\
-wavehashd tx gov submit-proposal param-change proposalName.json --from keyName --chain-id chainIDName -b block\
+`wavehashd tx gov submit-proposal param-change proposalName.json --from keyName --chain-id chainIDName -b block`\
 For example:&#x20;
 
 {% code overflow="wrap" fullWidth="true" %}
