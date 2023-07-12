@@ -39,7 +39,7 @@ wavehashd tx gov submit-proposal param-change <proposalFile.json> --from <keyNam
 
 For example:&#x20;
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```sh
 wavehashd tx gov submit-proposal param-change proposalPermission.json --from validator --chain-id testnet-1 -b block
 ```
