@@ -39,8 +39,15 @@ and save it as a json file.
 \
 
 
-**2**. **Submit a this proposal using command like this:**\
-`wavehashd tx gov submit-proposal param-change proposalName.json --from keyName --chain-id chainIDName -b block`\
+**2**. **Submit a this proposal using command like this:**
+
+{% code overflow="wrap" %}
+```
+wavehashd tx gov submit-proposal param-change <proposalFile.json> --from <keyName> --chain-id <chainIDName> -b block
+```
+{% endcode %}
+
+\
 For example:&#x20;
 
 {% code overflow="wrap" fullWidth="true" %}
@@ -50,7 +57,13 @@ wavehashd tx gov submit-proposal param-change proposalPermission.json --from val
 {% endcode %}
 
 **3. Wait for the deposit time to over OR submit a deposit using this command like this:**\
-wavehashd tx gov deposit proposalId AmountToBeDepositedwithDenom --from KeyName --chain-id chainIDName
+
+
+{% code overflow="wrap" %}
+```
+wavehashd tx gov deposit <proposalId> <AmountToBeDepositedwithDenom> --from <KeyName> --chain-id <chainIDName>
+```
+{% endcode %}
 
 For example:&#x20;
 
@@ -64,7 +77,13 @@ wavehashd tx gov deposit 1 8000000uwahax --from validator --chain-id testnet-1
 
 
 **4. After deposit period is over, voting time is started. Now vote for the proposal using command like this:**\
-wavehashd tx gov vote proposalId votingDecision(i.e. yes|no|abstain) --from keyName-- chain-id chainIDName
+
+
+{% code overflow="wrap" %}
+```
+wavehashd tx gov vote <proposalId> <votingDecision(i.e. yes|no|abstain)> --from <keyName> --chain-id <chainIDName>
+```
+{% endcode %}
 
 For example:&#x20;
 
