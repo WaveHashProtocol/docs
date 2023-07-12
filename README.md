@@ -31,59 +31,39 @@ Proposal example: This is the proposal to make the uploadAccess to limited addre
 }
 ```
 
-\
-
-
 and save it as a json file.
-
-\
-
 
 **2**. **Submit a this proposal using command like this:**
 
-{% code overflow="wrap" %}
-```
-wavehashd tx gov submit-proposal param-change <proposalFile.json> --from <keyName> --chain-id <chainIDName> -b block
-```
-{% endcode %}
+<pre><code><strong>wavehashd tx gov submit-proposal param-change &#x3C;proposalFile.json> --from &#x3C;keyName> --chain-id &#x3C;chainIDName> -b block
+</strong></code></pre>
 
-\
 For example:&#x20;
 
-{% code overflow="wrap" fullWidth="true" %}
+{% code fullWidth="true" %}
 ```sh
 wavehashd tx gov submit-proposal param-change proposalPermission.json --from validator --chain-id testnet-1 -b block
 ```
 {% endcode %}
 
-**3. Wait for the deposit time to over OR submit a deposit using this command like this:**\
+**3. Wait for the deposit time to over OR submit a deposit using this command like this:**
 
-
-{% code overflow="wrap" %}
 ```
 wavehashd tx gov deposit <proposalId> <AmountToBeDepositedwithDenom> --from <KeyName> --chain-id <chainIDName>
 ```
-{% endcode %}
 
 For example:&#x20;
 
-{% code overflow="wrap" %}
 ```bash
 wavehashd tx gov deposit 1 8000000uwahax --from validator --chain-id testnet-1
+
 ```
-{% endcode %}
 
-\
+**4. After deposit period is over, voting time is started. Now vote for the proposal using command like this:**
 
-
-**4. After deposit period is over, voting time is started. Now vote for the proposal using command like this:**\
-
-
-{% code overflow="wrap" %}
 ```
 wavehashd tx gov vote <proposalId> <votingDecision(i.e. yes|no|abstain)> --from <keyName> --chain-id <chainIDName>
 ```
-{% endcode %}
 
 For example:&#x20;
 
@@ -91,15 +71,9 @@ For example:&#x20;
 wavehashd tx gov vote 1 yes --from validator --chain-id testnet-1
 ```
 
-\
-
-
-**5. Now, wait for the proposal voting time to pass**\
-
+**5. Now, wait for the proposal voting time to pass**
 
 For More details Read Below OR visit this link: [https://github.com/CosmWasm/wasmd/blob/main/x/wasm/Governance.md](https://github.com/CosmWasm/wasmd/blob/main/x/wasm/Governance.md)
-
-
 
 **# Governance**
 
@@ -110,8 +84,6 @@ proposals interact with the CosmWasm contract lifecycle. It is
 a high-level, technical introduction meant to provide context before
 
 looking into the code, or constructing proposals.
-
-
 
 **## Proposal Types**
 
@@ -133,8 +105,6 @@ We have added 9 new wasm specific proposal types that cover the contract's live 
 
 For details see the proposal type \[implementation]\(https://github.com/CosmWasm/wasmd/blob/master/x/wasm/types/proposal.go)
 
-
-
 **## Wasmd Authorization Settings**
 
 Settings via sdk \`params\` module:
@@ -143,8 +113,6 @@ Settings via sdk \`params\` module:
 
 \- \`**instantiate\_default\_permission**\` - platform default, who can instantiate a wasm binary when the code owner has not set it\
 See \[params.go]\(https://github.com/CosmWasm/wasmd/blob/master/x/wasm/types/params.go)
-
-
 
 **### Init Params Via Genesis**
 
@@ -165,14 +133,12 @@ The values can be updated via gov proposal implemented in the \`params\` module.
 
 **Example to submit a parameter change gov proposal:**
 
-{% code overflow="wrap" fullWidth="false" %}
+{% code fullWidth="false" %}
 ```sh
 wasmd tx gov submit-proposal param-change <proposal-json-file> --from validator 
 --chain-id=testing -b block
 ```
 {% endcode %}
-
-
 
 **#### Content examples**
 
@@ -290,4 +256,3 @@ migrate-contract         Submit a migrate wasm contract to a new code version pr
 set-contract-admin       Submit a new admin for a contract proposal
 clear-contract-admin     Submit a clear admin for a contract to prevent further migrations proposal
 ```
-
