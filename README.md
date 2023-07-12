@@ -7,7 +7,7 @@ description: Change cosmos chain from permissionless to permissioned
 \
 1\. **Write a proposal**
 
-Proposal example: This is the proposal to make the uploadAccess to limited addresses.
+Proposal example: This is the proposal to make the uploadAccess to limited addresses. Write this proposal and save it in a json file.
 
 ```json
 // Proposal for Permission
@@ -31,12 +31,11 @@ Proposal example: This is the proposal to make the uploadAccess to limited addre
 }
 ```
 
-and save it as a json file.
-
 **2**. **Submit a this proposal using command like this:**
 
-<pre><code><strong>wavehashd tx gov submit-proposal param-change &#x3C;proposalFile.json> --from &#x3C;keyName> --chain-id &#x3C;chainIDName> -b block
-</strong></code></pre>
+```
+wavehashd tx gov submit-proposal param-change <proposalFile.json> --from <keyName> --chain-id <chainIDName> -b block
+```
 
 For example:&#x20;
 
@@ -56,7 +55,6 @@ For example:&#x20;
 
 ```bash
 wavehashd tx gov deposit 1 8000000uwahax --from validator --chain-id testnet-1
-
 ```
 
 **4. After deposit period is over, voting time is started. Now vote for the proposal using command like this:**
